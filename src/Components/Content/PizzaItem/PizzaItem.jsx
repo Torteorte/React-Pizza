@@ -1,3 +1,4 @@
+import Button from "../../Common/Button/Button"
 
 const PizzaItem = () => {
    return (
@@ -21,7 +22,7 @@ const PizzaItem = () => {
          </div>
          <div className="pizza-block__bottom">
             <div className="pizza-block__price">от 395 ₽</div>
-            <div className="button button--outline button--add">
+            <Button outline add >
                <svg
                   width="12"
                   height="12"
@@ -36,7 +37,7 @@ const PizzaItem = () => {
                </svg>
                <span>Добавить</span>
                <i>2</i>
-            </div>
+            </Button>
          </div>
       </div>
    )

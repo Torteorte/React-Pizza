@@ -7,9 +7,12 @@ const App = () => {
   return (
     <div className="wrapper">
       <Header />
-      <Content />
-      {/* <Cart /> */}
-      {/* <CartEmpty /> */}
+      <div className="content">
+        {/* <Content /> */}
+        <Cart />
+        {/* <CartEmpty /> */}
+      </div>
+
     </div>
 
   );
