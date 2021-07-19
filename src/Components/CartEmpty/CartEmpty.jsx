@@ -11,10 +11,8 @@ const CartEmpty = () => {
                Для того, чтобы заказать пиццу, перейди на главную страницу.
             </p>
             <img src={emptyCart} alt="Empty cart" />
-            <Button black>
-               <a href="/">
-                  <span>Вернуться назад</span>
-               </a>
+            <Button className="button--black">
+               <span>Вернуться назад</span>
             </Button>
 
          </div>

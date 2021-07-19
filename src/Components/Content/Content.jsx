@@ -15,7 +15,6 @@ const Content = () => {
             <PizzaItem />
             <PizzaItem />
             <PizzaItem />
-            <PizzaItem />
          </div>
       </div>
    )

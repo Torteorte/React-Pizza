@@ -1,16 +1,15 @@
+import React from 'react'
+
 const Navbar = () => {
    return (
       <div className="content__top">
-         <div className="categories">
-            <ul>
-               <li className="active">Все</li>
-               <li>Мясные</li>
-               <li>Вегетарианская</li>
-               <li>Гриль</li>
-               <li>Острые</li>
-               <li>Закрытые</li>
-            </ul>
-         </div>
+         <Categories onClick={(name) => { console.log(name) }} categoryItems={
+            ["Мясные",
+               "Вегетарианская",
+               "Гриль",
+               "Острые",
+               "Закрытые"]
+         } />
          <div className="sort">
             <div className="sort__label">
                <svg
@@ -36,6 +35,28 @@ const Navbar = () => {
                </ul>
             </div>
          </div>
+      </div>
+   )
+}
+
+const Categories = (props) => {
+
+   const [activeItem, setactiveItem] = React.useState(null)
+
+   const onSelectItem = (index) => {
+      setactiveItem(index)
+   }
+
+   const categoryItem = props.categoryItems && props.categoryItems.map((item, index) => {
+      return <li key={item} className={activeItem === index ? "active" : ""} onClick={() => { onSelectItem(index) }} >{item}</li>
+   })
+
+   return (
+      <div className="categories">
+         <ul>
+            <li className={activeItem === null ? "active" : ""} onClick={() => { onSelectItem(null) }}>Все</li>
+            {categoryItem}
+         </ul>
       </div>
    )
 }

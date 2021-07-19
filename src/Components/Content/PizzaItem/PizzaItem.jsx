@@ -22,7 +22,7 @@ const PizzaItem = () => {
          </div>
          <div className="pizza-block__bottom">
             <div className="pizza-block__price">от 395 ₽</div>
-            <Button outline add >
+            <Button className="button--outline button--add">
                <svg
                   width="12"
                   height="12"
