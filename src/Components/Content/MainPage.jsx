@@ -1,7 +1,7 @@
 import Navbar from "./Navbar/Navbar"
 import PizzaItem from "./PizzaItem/PizzaItem"
 
-const Content = () => {
+const MainPage = () => {
    return (
       <div className="container">
          <Navbar />
@@ -20,4 +20,4 @@ const Content = () => {
    )
 }
 
-export default Content
+export default MainPage
