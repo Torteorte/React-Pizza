@@ -13,9 +13,9 @@ const Navbar = () => {
                "Закрытые"]
          } />
          <SortPopup categoryItems={
-            ["популярности",
-               "цене",
-               "алфавиту"]
+            [{ name: 'популярности', type: 'popular' },
+            { name: 'цене', type: 'price' },
+            { name: 'алфавиту', type: 'alphabet' }]
          } />
       </div>
    )

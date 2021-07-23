@@ -7,6 +7,8 @@ const Categories = (props) => {
       setactiveItem(index)
    }
 
+   console.log("Render")
+
    const categoryItem = props.categoryItems && props.categoryItems.map((item, index) => {
       return <li key={item} className={activeItem === index ? "active" : ""} onClick={() => { onSelectItem(index) }} >{item}</li>
    })
