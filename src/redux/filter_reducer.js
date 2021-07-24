@@ -2,25 +2,28 @@ const SET_CATEGORY = "SET_CATEGORY";
 const SET_SORTYBY = "SET_SORTYBY";
 
 let initialState = {
-   categorys: 0,
-   sortby: "popular"
+   category: null,
+   sortBy: {
+      type: 'popular',
+      order: 'desc'
+   }
 }
 
 let filterReducer = (state = initialState, action) => {
    switch (action.type) {
 
       case SET_CATEGORY:
-         return { ...state, categorys: action.payload }
+         return { ...state, category: action.payload }
 
       case SET_SORTYBY:
-         return { ...state, sortby: action.payload }
+         return { ...state, sortBy: action.payload }
 
       default:
          return state
    }
 }
 
-export const setCategorysAC = (categorys) => ({ type: SET_CATEGORY, payload: categorys })
-export const setSortbyAC = (sortby) => ({ type: SET_SORTYBY, payload: sortby })
+export const setCategorysAC = (catIndex) => ({ type: SET_CATEGORY, payload: catIndex })
+export const setSortByAC = ({ type, order }) => ({ type: SET_SORTYBY, payload: { type, order } })
 
 export default filterReducer

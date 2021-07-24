@@ -4,21 +4,9 @@ import Cart from './Components/Cart/Cart';
 import CartEmpty from './Components/CartEmpty/CartEmpty';
 import { Redirect, Route } from 'react-router-dom';
 import React from 'react';
-import axios from "axios";
-import { setPizzasAC } from './redux/pizzas_reducer'
-import { useDispatch } from 'react-redux';
+
 
 const App = () => {
-
-  const dispatch = useDispatch()
-
-  React.useEffect(() => {
-    axios.get('http://localhost:3001/pizzas')
-      .then(({ data }) => {
-        dispatch(setPizzasAC(data))
-      })
-  }, [])
-
   return (
     <div className="wrapper">
       <Header />

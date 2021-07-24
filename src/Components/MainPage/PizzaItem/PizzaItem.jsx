@@ -50,9 +50,6 @@ const PizzaItem = (props) => {
                      {size} см.
                   </li>
                })}
-               {/* <li className="active">26 см.</li>
-               <li>30 см.</li>
-               <li>40 см.</li> */}
             </ul>
          </div>
          <div className="pizza-block__bottom">
