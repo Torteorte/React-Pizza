@@ -2,28 +2,43 @@ import React from 'react'
 import Button from "../../Common/Button/Button"
 import classNames from "classnames"
 
-const PizzaItem = (props) => {
+const PizzaItem = ({ id, category, imageUrl, name, types, price, sizes, onClickAddPizza, thisPizzaCount }) => {
 
-   const [activeType, setActiveType] = React.useState(props.item.types[0])
+
    const typeNames = ['тонкое', 'традиционное']
+   const sizesNames = [26, 30, 40]
+
    const onSelectType = (index) => {
       setActiveType(index)
    }
-
-   const [activeSizes, setActiveSizes] = React.useState(props.item.sizes[0])
-   const sizesNames = [26, 30, 40]
    const onSelectSize = (index) => {
       setActiveSizes(index)
    }
 
+   const [activeType, setActiveType] = React.useState(types[0])
+   const [activeSizes, setActiveSizes] = React.useState(0)
+
+   const addPizzaToCart = () => {
+      const obj = {
+         id,
+         category,
+         imageUrl,
+         name,
+         price,
+         type: typeNames[activeType],
+         size: sizesNames[activeSizes]
+      }
+      onClickAddPizza(obj)
+   }
+
    return (
-      <div className="pizza-block" id={props.item.id}>
+      <div className="pizza-block" id={id}>
          <img
             className="pizza-block__image"
-            src={props.item.imageUrl}
+            src={imageUrl}
             alt="Pizza"
          />
-         <h4 className="pizza-block__title">{props.item.name}</h4>
+         <h4 className="pizza-block__title">{name}</h4>
          <div className="pizza-block__selector">
             <ul>
                {typeNames.map((type, index) => {
@@ -31,7 +46,7 @@ const PizzaItem = (props) => {
                      key={type}
                      className={classNames({
                         active: activeType === index,
-                        disabled: !props.item.types.includes(index)
+                        disabled: !types.includes(index)
                      })}
                      onClick={() => { onSelectType(index) }} >
                      {type}
@@ -44,7 +59,7 @@ const PizzaItem = (props) => {
                      key={size}
                      className={classNames({
                         active: activeSizes === index,
-                        disabled: !props.item.sizes.includes(size)
+                        disabled: !sizes.includes(size)
                      })}
                      onClick={() => { onSelectSize(index) }} >
                      {size} см.
@@ -53,8 +68,8 @@ const PizzaItem = (props) => {
             </ul>
          </div>
          <div className="pizza-block__bottom">
-            <div className="pizza-block__price">от {props.item.price} ₽</div>
-            <Button className="button--outline button--add">
+            <div className="pizza-block__price">от {price} ₽</div>
+            <Button onClick={addPizzaToCart} className="button--add" outline>
                <svg
                   width="12"
                   height="12"
@@ -68,7 +83,7 @@ const PizzaItem = (props) => {
                   />
                </svg>
                <span>Добавить</span>
-               <i>2</i>
+               {thisPizzaCount && <i>{thisPizzaCount}</i>}
             </Button>
          </div>
       </div>

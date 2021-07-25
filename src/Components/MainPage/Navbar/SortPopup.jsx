@@ -10,8 +10,8 @@ const SortPopup = (props) => {
       setVisiblePopup(!visiblePopup)
    }
 
-   const outsideClick = (e) => {
-      const path = e.path || (e.composedPath && e.composedPath());
+   const outsideClick = (event) => {
+      const path = event.path || (event.composedPath && event.composedPath());
       if (!path.includes(sortRef.current)) {
          setVisiblePopup(false)
       }

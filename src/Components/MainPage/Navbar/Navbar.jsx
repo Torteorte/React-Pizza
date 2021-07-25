@@ -1,22 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import Categories from './Categories'
 import SortPopup from './SortPopup'
 
-const categoryNames = [
-   "Мясные",
-   "Вегетарианская",
-   "Гриль",
-   "Острые",
-   "Закрытые"
-]
-
-const SortPopupNames = [
-   { name: 'популярности', type: 'popular', order: 'desc' },
-   { name: 'цене', type: 'price', order: 'desc' },
-   { name: 'алфавиту', type: 'name', order: 'asc' }
-]
-
 const Navbar = (props) => {
+
+   const { categoryNames, SortPopupNames } = useSelector(({ filter }) => filter);
 
    return (
       <div className="content__top">
