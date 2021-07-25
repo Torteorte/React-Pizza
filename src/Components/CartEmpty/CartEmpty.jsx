@@ -1,4 +1,5 @@
 import Button from '../Common/Button/Button'
+import ComeBack from '../Common/ComeBack/ComeBack'
 import emptyCart from './../../assets/img/empty-cart.png'
 
 const CartEmpty = () => {
@@ -12,9 +13,8 @@ const CartEmpty = () => {
             </p>
             <img src={emptyCart} alt="Empty cart" />
             <Button className="button--black">
-               <span>Вернуться назад</span>
+               <ComeBack />
             </Button>
-
          </div>
       </div>
    )

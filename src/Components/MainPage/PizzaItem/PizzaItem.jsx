@@ -4,7 +4,6 @@ import classNames from "classnames"
 
 const PizzaItem = ({ id, category, imageUrl, name, types, price, sizes, onClickAddPizza, thisPizzaCount }) => {
 
-
    const typeNames = ['тонкое', 'традиционное']
    const sizesNames = [26, 30, 40]
 
@@ -68,7 +67,7 @@ const PizzaItem = ({ id, category, imageUrl, name, types, price, sizes, onClickA
             </ul>
          </div>
          <div className="pizza-block__bottom">
-            <div className="pizza-block__price">от {price} ₽</div>
+            <div className="pizza-block__price">от {price} ₴</div>
             <Button onClick={addPizzaToCart} className="button--add" outline>
                <svg
                   width="12"

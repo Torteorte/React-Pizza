@@ -48,7 +48,7 @@ const MainPage = () => {
                      key={item.id}
                      {...item}
                      onClickAddPizza={handleAddPizzaToCart}
-                     thisPizzaCount={cartItems[item.id] && cartItems[item.id].length}
+                     thisPizzaCount={cartItems[item.id] && cartItems[item.id].items.length}
                   />
                })
                : Array(12).fill(0).map((_, index) => <PizzaLoader key={index} />)}

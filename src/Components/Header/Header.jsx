@@ -20,7 +20,8 @@ const Header = () => {
                </div>
             </NavLink>
             <div className="header__cart">
-               <NavLink to="/cart">
+               {/* <NavLink to={totalPrice ? "/Cart" : "/CartEmpty"}> */}
+               <NavLink to="/Cart">
                   <Button className="button--cart">
                      <span>{totalPrice} ₽</span>
                      <div className="button__delimiter"></div>
