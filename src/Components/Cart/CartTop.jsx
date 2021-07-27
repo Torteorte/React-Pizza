@@ -1,5 +1,17 @@
+import React from 'react';
+import { useDispatch } from "react-redux";
+import { clearCartAC } from "../../redux/cart_reducer";
 
 const CartTop = () => {
+
+   const dispatch = useDispatch()
+
+   const HanddleClearCart = () => {
+      if (window.confirm("Вы действителньо хотите очистить корзину?")) {
+         dispatch(clearCartAC());
+      }
+   };
+
    return (
       <div className="cart__top">
          <h2 className="content__title"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +27,7 @@ const CartTop = () => {
                <path d="M8.33337 9.16667V14.1667" stroke="#B6B6B6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                <path d="M11.6666 9.16667V14.1667" stroke="#B6B6B6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <span>Очистить корзину</span>
+            <span onClick={HanddleClearCart}>Очистить корзину</span>
          </div>
       </div>
    )

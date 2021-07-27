@@ -1,6 +1,7 @@
 import React from 'react'
-import Button from "../../Common/Button/Button"
 import classNames from "classnames"
+
+import Button from "../../Common/Button/Button"
 
 const PizzaItem = ({ id, category, imageUrl, name, types, price, sizes, onClickAddPizza, thisPizzaCount }) => {
 

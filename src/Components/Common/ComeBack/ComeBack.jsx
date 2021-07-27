@@ -1,11 +1,11 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const ComeBack = () => {
    return (
-      <NavLink to="/MainPage">
+      <Link to="/MainPage">
          <span>Вернуться назад</span>
-      </NavLink>
+      </Link>
    )
 }
 

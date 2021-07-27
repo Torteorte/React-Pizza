@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+
 import Categories from './Categories'
 import SortPopup from './SortPopup'
 

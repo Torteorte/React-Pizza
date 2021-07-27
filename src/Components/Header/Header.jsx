@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom'
+
 import Button from '../Common/Button/Button'
 import logo from './../../assets/img/pizza-logo.svg'
 
@@ -20,10 +21,9 @@ const Header = () => {
                </div>
             </NavLink>
             <div className="header__cart">
-               {/* <NavLink to={totalPrice ? "/Cart" : "/CartEmpty"}> */}
                <NavLink to="/Cart">
                   <Button className="button--cart">
-                     <span>{totalPrice} ₽</span>
+                     <span>{totalPrice} ₴</span>
                      <div className="button__delimiter"></div>
                      <svg
                         width="18"

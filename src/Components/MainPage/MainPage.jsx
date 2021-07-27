@@ -1,12 +1,13 @@
 import React from 'react';
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+
+import { setCategorysAC, setSortByAC } from './../../redux/filter_reducer'
+import { addPizzaToCartAC } from '../../redux/cart_reducer';
+import { setPizzas } from './../../redux/pizzas_reducer'
+
+import PizzaLoader from '../Common/Loader/PizzaLoader';
 import Navbar from "./Navbar/Navbar"
 import PizzaItem from "./PizzaItem/PizzaItem"
-import { setPizzas } from './../../redux/pizzas_reducer'
-import { setCategorysAC, setSortByAC } from './../../redux/filter_reducer'
-import { useDispatch } from 'react-redux';
-import PizzaLoader from '../Common/Loader/PizzaLoader';
-import { addPizzaToCartAC } from '../../redux/cart_reducer';
 
 const MainPage = () => {
 

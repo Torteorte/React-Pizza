@@ -1,17 +1,21 @@
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom"
+
 import Button from "../Common/Button/Button"
 import ComeBack from "../Common/ComeBack/ComeBack";
 
-const CartBottom = () => {
+const CartBottom = (props) => {
 
    const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
+
+   const onOrder = () => {
+      console.log('ВАш заказ', props.items)
+   }
 
    return (
       <div className="cart__bottom">
          <div className="cart__bottom-details">
-            <span> Всего пицц: <b>{totalPrice} шт.</b> </span>
-            <span> Сумма заказа: <b>{totalCount} ₽</b> </span>
+            <span> Всего пицц: <b>{totalCount} шт.</b> </span>
+            <span> Сумма заказа: <b>{totalPrice} ₴</b> </span>
          </div>
          <div className="cart__bottom-buttons">
             <Button className="button--add go-back-btn" outline>
@@ -21,7 +25,7 @@ const CartBottom = () => {
                <ComeBack />
             </Button>
             <div>
-               <Button className="pay-btn">
+               <Button className="pay-btn" onClick={onOrder}>
                   <span>Оплатить сейчас</span>
                </Button>
             </div>
